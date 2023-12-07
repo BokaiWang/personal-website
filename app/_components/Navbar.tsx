@@ -4,6 +4,7 @@ import { FaCat } from "react-icons/fa";
 import React from "react";
 import { usePathname } from "next/navigation";
 import classNames from "classnames";
+import ThemeToggle from "./ThemeToggle";
 
 const Navbar = () => {
   const pathname = usePathname();
@@ -18,7 +19,8 @@ const Navbar = () => {
       <Link href={"/"}>
         <FaCat />
       </Link>
-      <ul className="flex gap-5">
+      <ul className="flex gap-5 items-center">
+        <ThemeToggle />
         {navLinks.map((link) => (
           <li key={link.title}>
             <Link
