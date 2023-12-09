@@ -5,6 +5,7 @@ import React from "react";
 import { usePathname } from "next/navigation";
 import classNames from "classnames";
 import ThemeToggle from "./ThemeToggle";
+import HamburgerMenu from "./HamburgerMenu";
 
 const Navbar = () => {
   const pathname = usePathname();
@@ -15,28 +16,33 @@ const Navbar = () => {
     { title: "Contact", href: "/contact" },
   ];
   return (
-    <nav className="flex justify-between p-3 text-2xl border-b-stone-500 border-b">
-      <Link href={"/"}>
-        <FaCat />
-      </Link>
-      <ul className="flex gap-5 items-center">
-        <ThemeToggle />
-        {navLinks.map((link) => (
-          <li key={link.title}>
-            <Link
-              className={classNames({
-                "duration-300": true,
-                "hover:text-orange-700": true,
-                "text-orange-700": pathname === link.href,
-              })}
-              href={link.href}
-            >
-              {link.title}
-            </Link>
-          </li>
-        ))}
-      </ul>
-    </nav>
+    <div className="sticky w-screen">
+      <nav className="flex justify-between p-3 text-2xl border-b-stone-500 border-b">
+        <Link href={"/"}>
+          <FaCat />
+        </Link>
+        <ul className="flex gap-5 items-center">
+          <ThemeToggle />
+          <HamburgerMenu navLinks={navLinks} />
+          <div className="hidden sm:flex sm:gap-5 sm:items-center">
+            {navLinks.map((link) => (
+              <li key={link.title}>
+                <Link
+                  className={classNames({
+                    "duration-300": true,
+                    "hover:text-orange-700": true,
+                    "text-orange-700": pathname === link.href,
+                  })}
+                  href={link.href}
+                >
+                  {link.title}
+                </Link>
+              </li>
+            ))}
+          </div>
+        </ul>
+      </nav>
+    </div>
   );
 };
 

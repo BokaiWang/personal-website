@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Rubik } from "next/font/google";
 import "./globals.css";
 import Navbar from "./_components/Navbar";
+import PageContainer from "./_components/PageContainer";
 
 const rubik = Rubik({ subsets: ["latin"], variable: "--font-rubik" });
 
@@ -18,10 +19,12 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${rubik.variable} font-rubik bg-orange-200 dark:bg-stone-800 dark:text-slate-300`}
+        className={`${rubik.variable} font-rubik bg-orange-200 dark:bg-stone-800 dark:text-slate-300 h-screen box-border`}
       >
         <Navbar />
-        <main>{children}</main>
+        <main className="p-3">
+          <PageContainer>{children}</PageContainer>
+        </main>
       </body>
     </html>
   );
