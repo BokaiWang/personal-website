@@ -10,14 +10,14 @@ import HamburgerMenu from "./HamburgerMenu";
 const Navbar = () => {
   const pathname = usePathname();
   const navLinks: { title: string; href: string }[] = [
-    { title: "About", href: "/about" },
-    { title: "Projects", href: "/projects" },
+    { title: "About", href: "/#about" },
+    { title: "Projects", href: "/#projects" },
     { title: "Blog", href: "/blog" },
-    { title: "Contact", href: "/contact" },
+    { title: "Contact", href: "/#contact" },
   ];
   return (
-    <div className="sticky w-screen">
-      <nav className="flex justify-between p-3 text-2xl border-b-stone-500 border-b">
+    <div className="sticky w-screen top-0 bg-orange-200 dark:bg-stone-800 bg-opacity-80">
+      <nav className="flex justify-between p-3 text-2xl border-b-stone-500 border-b-2">
         <Link href={"/"}>
           <FaCat />
         </Link>
