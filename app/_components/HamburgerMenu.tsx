@@ -16,7 +16,10 @@ const HamburgerMenu = ({ navLinks }: Props) => {
   return (
     <div className="sm:hidden flex items-center">
       {open && (
-        <div className="fixed top-0 left-0 right-0 bottom-0 bg-black bg-opacity-60" />
+        <div
+          className="fixed top-0 left-0 right-0 bottom-0 bg-black bg-opacity-60"
+          onClick={() => setOpen(false)}
+        />
       )}
       <div
         className={`${
