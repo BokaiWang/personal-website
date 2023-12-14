@@ -2,7 +2,7 @@ import React from "react";
 
 const Home = () => {
   return (
-    <section id="home" className="ml-auto mr-auto w-full sm:w-3/5">
+    <section id="home" className="mx-auto w-full sm:w-3/5">
       <h1 className="text-6xl mt-6 mb-12">Welcome to my playground!</h1>
       <article>
         <p className="text-3xl leading-loose">
