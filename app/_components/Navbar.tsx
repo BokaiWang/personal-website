@@ -1,14 +1,13 @@
 "use client";
 import Link from "next/link";
 import { FaCat } from "react-icons/fa";
-import React from "react";
-import { usePathname } from "next/navigation";
+import React, { useState } from "react";
 import classNames from "classnames";
 import ThemeToggle from "./ThemeToggle";
 import HamburgerMenu from "./HamburgerMenu";
 
 const Navbar = () => {
-  const pathname = usePathname();
+  const [activeSection, setActiveSection] = useState("Intro");
   const navLinks: { title: string; href: string }[] = [
     { title: "About", href: "/#about" },
     { title: "Projects", href: "/#projects" },
@@ -16,7 +15,7 @@ const Navbar = () => {
     { title: "Contact", href: "/#contact" },
   ];
   return (
-    <div className="sticky w-screen top-0 bg-orange-200 dark:bg-stone-800 bg-opacity-80">
+    <div className="sticky w-screen top-0 bg-orange-200 dark:bg-stone-800 bg-opacity-90">
       <nav className="flex justify-between p-3 text-2xl border-b-stone-500 border-b-2">
         <Link href={"/"}>
           <FaCat />
@@ -29,11 +28,12 @@ const Navbar = () => {
               <li key={link.title}>
                 <Link
                   className={classNames({
-                    "duration-300": true,
+                    "transition-colors": true,
                     "hover:text-orange-700": true,
-                    "text-orange-700": pathname === link.href,
+                    "text-orange-700": activeSection === link.title,
                   })}
                   href={link.href}
+                  onClick={() => setActiveSection(link.title)}
                 >
                   {link.title}
                 </Link>

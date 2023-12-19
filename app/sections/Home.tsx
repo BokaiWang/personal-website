@@ -29,8 +29,8 @@ const Home = () => {
           building websites and web apps.
         </p>
         <div className="flex gap-6">
-          <div className="flex items-center gap-3">
-            <p className="text-xl">Tech Stack:</p>
+          <div className="flex items-center justify-start gap-3">
+            <p className="text-xl whitespace-nowrap">Tech Stack:</p>
             <div title="React.js">
               <FaReact className="w-7 h-7" />
             </div>
@@ -41,28 +41,28 @@ const Home = () => {
               <FaCss3 className="w-7 h-7" />
             </div>
           </div>
-          <div className="flex items-center gap-3">
-            <p className="text-xl">Social Media:</p>
+          <div className="flex items-center justify-start gap-3">
+            <p className="text-xl whitespace-nowrap">Social Media:</p>
             <a
               href="https://github.com/BokaiWang"
               target="_blank"
-              className="transition hover:scale-110"
+              className="transition-transform hover:scale-110"
             >
               <FaSquareGithub className="w-7 h-7" />
             </a>
             <a
               href="https://www.linkedin.com/in/bo-kai-wang-132257142/"
               target="_blank"
-              className="transition hover:scale-110"
+              className="transition-transform hover:scale-110"
             >
               <FaLinkedin className="w-7 h-7" />
             </a>
           </div>
 
           <div>
-            <a className="group transition hover:scale-105 bg-amber-600 rounded-full py-1 px-2 cursor-pointer flex items-center gap-1 opacity-80">
-              Download Resume{" "}
-              <HiDownload className="opacity-80 group-hover:translate-y-1 transition" />
+            <a className="group transition-transform hover:scale-105 bg-amber-600 dark:bg-stone-800 dark:outline dark:outline-amber-600 rounded-full py-1 px-2 cursor-pointer flex items-center gap-1 opacity-80">
+              Resume{" "}
+              <HiDownload className="opacity-80 group-hover:translate-y-1 transition-transform" />
             </a>
           </div>
         </div>
