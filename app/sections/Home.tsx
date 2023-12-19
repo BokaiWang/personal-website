@@ -1,17 +1,71 @@
+"use client";
 import React from "react";
+import {
+  FaSquareGithub,
+  FaLinkedin,
+  FaReact,
+  FaHtml5,
+  FaCss3,
+} from "react-icons/fa6";
+import { HiDownload } from "react-icons/hi";
+import { TypeAnimation } from "react-type-animation";
 
 const Home = () => {
   return (
     <section id="home" className="mx-auto w-full sm:w-3/5">
-      <h1 className="text-6xl mt-6 mb-12">Welcome to my playground!</h1>
-      <article>
-        <p className="text-3xl leading-loose">
-          Hello, fellow coders and curious minds! I'm{" "}
-          <span className="font-bold italic">Bo-Kai Wang</span>, a{" "}
-          <span className="font-bold italic">frontend developer</span> fueled by
-          a passion for turning lines of code into captivating user experiences
-          and specializing in React. I enjoy building websites and web apps.
+      <article className="flex flex-col gap-3">
+        <h1 className="text-6xl">Hey there,</h1>
+        <p className="text-5xl">
+          I'm{" "}
+          <TypeAnimation
+            sequence={["a Web Developer", 500, "Bo-Kai Wang", 500]}
+            cursor={true}
+            repeat={Infinity}
+          />
         </p>
+        <p className="text-3xl leading-loose">
+          I'm a frontend developer specializing in React and fueled by a passion
+          for turning lines of code into captivating user experiences. I enjoy
+          building websites and web apps.
+        </p>
+        <div className="flex gap-6">
+          <div className="flex items-center gap-3">
+            <p className="text-xl">Tech Stack:</p>
+            <div title="React.js">
+              <FaReact className="w-7 h-7" />
+            </div>
+            <div title="HTML">
+              <FaHtml5 className="w-7 h-7" />
+            </div>
+            <div title="CSS">
+              <FaCss3 className="w-7 h-7" />
+            </div>
+          </div>
+          <div className="flex items-center gap-3">
+            <p className="text-xl">Social Media:</p>
+            <a
+              href="https://github.com/BokaiWang"
+              target="_blank"
+              className="transition hover:scale-110"
+            >
+              <FaSquareGithub className="w-7 h-7" />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/bo-kai-wang-132257142/"
+              target="_blank"
+              className="transition hover:scale-110"
+            >
+              <FaLinkedin className="w-7 h-7" />
+            </a>
+          </div>
+
+          <div>
+            <a className="group transition hover:scale-105 bg-amber-600 rounded-full py-1 px-2 cursor-pointer flex items-center gap-1 opacity-80">
+              Download Resume{" "}
+              <HiDownload className="opacity-80 group-hover:translate-y-1 transition" />
+            </a>
+          </div>
+        </div>
       </article>
     </section>
   );
