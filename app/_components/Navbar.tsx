@@ -15,10 +15,10 @@ const Navbar = () => {
     { title: "Contact", href: "/#contact" },
   ];
   return (
-    <div className="sticky w-screen top-0 bg-orange-200 dark:bg-stone-800 bg-opacity-90">
-      <nav className="flex justify-between p-3 text-2xl border-b-stone-500 border-b-2">
+    <div className="sticky z-10 w-screen top-0 bg-brand-100 dark:bg-stone-800">
+      <nav className="flex justify-between p-3 text-lg">
         <Link href={"/"}>
-          <FaCat />
+          <FaCat className="text-brand-500" />
         </Link>
         <ul className="flex gap-5 items-center">
           <ThemeToggle />
@@ -28,9 +28,13 @@ const Navbar = () => {
               <li key={link.title}>
                 <Link
                   className={classNames({
+                    "rounded-2xl": true,
+                    "py-1": true,
+                    "px-4": true,
                     "transition-colors": true,
-                    "hover:text-orange-700": true,
-                    "text-orange-700": activeSection === link.title,
+                    "focus:bg-brand-500": true,
+                    "hover:bg-brand-500": true,
+                    "bg-brand-500": activeSection === link.title,
                   })}
                   href={link.href}
                   onClick={() => setActiveSection(link.title)}

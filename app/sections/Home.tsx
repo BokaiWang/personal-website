@@ -58,11 +58,10 @@ const Home = () => {
               <FaLinkedin className="w-7 h-7" />
             </a>
           </div>
-
           <div>
-            <a className="group transition-transform hover:scale-105 bg-amber-600 dark:bg-stone-800 dark:outline dark:outline-amber-600 rounded-full py-1 px-2 cursor-pointer flex items-center gap-1 opacity-80">
+            <a className="group transition-transform hover:scale-105 bg-brand-500 dark:bg-stone-800 dark:outline dark:outline-amber-600 rounded-full py-1 px-3 cursor-pointer flex items-center gap-1 opacity-80">
               Resume{" "}
-              <HiDownload className="opacity-80 group-hover:translate-y-1 transition-transform" />
+              <HiDownload className="opacity-60 group-hover:translate-y-1 transition-transform" />
             </a>
           </div>
         </div>

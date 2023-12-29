@@ -18,7 +18,7 @@ export default function RootLayout({
   return (
     <html lang="en" className="scroll-smooth">
       <body
-        className={`${rubik.variable} font-rubik bg-gradient-to-r from-amber-500 to-orange-200 dark:bg-none dark:bg-stone-800 dark:text-slate-300 box-border`}
+        className={`${rubik.variable} font-rubik text-brand-950 bg-brand-50 dark:bg-none dark:bg-stone-800 dark:text-slate-400 box-border`}
       >
         <Navbar />
         <main className="p-3">{children}</main>
