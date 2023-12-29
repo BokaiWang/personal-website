@@ -10,7 +10,9 @@ export default function Page() {
       <Home />
       <SectionDivider />
       <About />
+      <SectionDivider />
       <Projects />
+      <SectionDivider />
       <Contact />
     </>
   );
