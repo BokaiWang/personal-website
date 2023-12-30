@@ -20,6 +20,8 @@ export default function RootLayout({
       <body
         className={`${rubik.variable} font-rubik text-brand-900 bg-brand-100 dark:bg-none dark:bg-stone-800 dark:text-slate-400 box-border`}
       >
+        <div className="bg-brand-200 absolute -z-10 rounded-full w-48 h-48 top-20 -left-10 blur-3xl sm:w-96 sm:h-96 sm:blur-[10rem]" />
+        <div className="bg-brand-200 absolute -z-10 rounded-full w-48 h-48 -bottom-10 right-10 blur-3xl sm:w-96 sm:h-96 sm:blur-[10rem]" />
         <Navbar />
         <main className="p-3">{children}</main>
       </body>
