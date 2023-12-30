@@ -2,14 +2,20 @@
 import React from "react";
 import SectionHeader from "../_components/SectionHeader";
 import { useForm, SubmitHandler } from "react-hook-form";
+import { z } from "zod";
+import { ContactFormSchema } from "../utilities/validationSchema";
+import { zodResolver } from "@hookform/resolvers/zod";
 
-interface FormData {
-  email: string;
-  message: string;
-}
+type FormData = z.infer<typeof ContactFormSchema>;
 
 const Contact = () => {
-  const { register, handleSubmit } = useForm<FormData>();
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<FormData>({
+    resolver: zodResolver(ContactFormSchema),
+  });
   const submitHandler: SubmitHandler<FormData> = (data) => console.log(data);
 
   return (
@@ -28,19 +34,28 @@ const Contact = () => {
       <form
         onSubmit={handleSubmit(submitHandler)}
         autoComplete="off"
-        className="flex flex-col gap-5 bg-brand-200 rounded-lg p-10 h-fit min-h-80"
+        className="flex flex-col gap-5 bg-brand-200 rounded-lg p-10 h-fit min-h-80 items-stretch"
       >
-        <input
-          {...register("email", { required: true })}
-          placeholder="Your email..."
-          className="bg-brand-300 rounded-lg text-lg px-2 py-1 placeholder:text-brand-900 placeholder:opacity-50 focus:outline-brand-500 focus:border-none autofill:bg-brand-300"
-        />
-
-        <textarea
-          {...register("message", { required: true })}
-          className="bg-brand-300 rounded-lg text-lg px-2 py-1 h-80 placeholder:text-brand-900 placeholder:opacity-50 focus:outline-brand-500"
-          placeholder="Your message..."
-        />
+        <div>
+          <input
+            {...register("email")}
+            placeholder="Your email..."
+            className="bg-brand-300 w-full rounded-lg text-lg px-2 py-1 placeholder:text-brand-900 placeholder:opacity-50 focus:outline-brand-500 focus:border-none autofill:bg-brand-300"
+          />
+          <p className="text-rose-600 text-sm mt-1 px-2">
+            {errors.email?.message}
+          </p>
+        </div>
+        <div>
+          <textarea
+            {...register("message")}
+            className="bg-brand-300 w-full rounded-lg text-lg mb-0 px-2 py-1 h-80 placeholder:text-brand-900 placeholder:opacity-50 focus:outline-brand-500"
+            placeholder="Your message..."
+          />
+          <p className="text-rose-600 text-sm -mt-1 px-2">
+            {errors.message?.message}
+          </p>
+        </div>
         <div className="flex gap-3">
           <button className="bg-brand-500 hover:bg-brand-600 px-4 rounded-full transition-colors text-lg ">
             Submit
