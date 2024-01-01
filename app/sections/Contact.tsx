@@ -5,6 +5,7 @@ import { useForm, SubmitHandler } from "react-hook-form";
 import { z } from "zod";
 import { ContactFormSchema } from "../utilities/validationSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { sendEmail } from "../utilities/formAction";
 
 type FormData = z.infer<typeof ContactFormSchema>;
 
@@ -16,7 +17,6 @@ const Contact = () => {
   } = useForm<FormData>({
     resolver: zodResolver(ContactFormSchema),
   });
-  const submitHandler: SubmitHandler<FormData> = (data) => console.log(data);
 
   return (
     <section id="contact" className="scroll-m-20 mx-auto w-full sm:w-3/5">
@@ -32,7 +32,7 @@ const Contact = () => {
         or through this form.
       </p>
       <form
-        onSubmit={handleSubmit(submitHandler)}
+        onSubmit={handleSubmit(sendEmail)}
         autoComplete="off"
         className="flex flex-col gap-5 bg-brand-200 rounded-lg p-10 h-fit min-h-80 items-stretch"
       >
