@@ -10,6 +10,7 @@ const Navbar = () => {
   const [activeSection, setActiveSection] = useState("Intro");
   const navLinks: { title: string; href: string }[] = [
     { title: "About", href: "/#about" },
+    { title: "Experience", href: "/#experience" },
     { title: "Projects", href: "/#projects" },
     { title: "Blog", href: "/blog" },
     { title: "Contact", href: "/#contact" },
