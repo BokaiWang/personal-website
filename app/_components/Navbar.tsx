@@ -1,9 +1,8 @@
 "use client";
-import Link from "next/link";
-import { FaCat } from "react-icons/fa";
-import React, { useState } from "react";
 import classNames from "classnames";
-import ThemeToggle from "./ThemeToggle";
+import Link from "next/link";
+import { useState } from "react";
+import { FaCat } from "react-icons/fa";
 import HamburgerMenu from "./HamburgerMenu";
 
 const Navbar = () => {
@@ -12,7 +11,7 @@ const Navbar = () => {
     { title: "About", href: "/#about" },
     { title: "Experience", href: "/#experience" },
     { title: "Projects", href: "/#projects" },
-    { title: "Blog", href: "/blog" },
+    // { title: "Blog", href: "/blog" },
     { title: "Contact", href: "/#contact" },
   ];
   return (
@@ -22,7 +21,7 @@ const Navbar = () => {
           <FaCat className="text-brand-500" />
         </Link>
         <ul className="flex gap-5 items-center">
-          <ThemeToggle />
+          {/* <ThemeToggle /> */}
           <HamburgerMenu navLinks={navLinks} />
           <div className="hidden sm:flex sm:gap-5 sm:items-center">
             {navLinks.map((link) => (
