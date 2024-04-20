@@ -8,6 +8,7 @@ import {
   FaCss3,
 } from "react-icons/fa6";
 import { HiDownload } from "react-icons/hi";
+import { TbBrandNextjs } from "react-icons/tb";
 import { TypeAnimation } from "react-type-animation";
 
 const Home = () => {
@@ -33,6 +34,9 @@ const Home = () => {
             <p className="text-xl whitespace-nowrap">Tech Stack:</p>
             <div title="React.js">
               <FaReact className="w-7 h-7" />
+            </div>
+            <div title="Next.js">
+              <TbBrandNextjs className="w-7 h-7" />
             </div>
             <div title="HTML">
               <FaHtml5 className="w-7 h-7" />

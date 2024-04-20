@@ -1,5 +1,7 @@
-import React from "react";
-import { ReactNode } from "react";
+import GameHub from "@/public/gameHub.png";
+import IssueTracker from "@/public/issueTracker.png";
+import { StaticImageData } from "next/image";
+import React, { ReactNode } from "react";
 import { MdWork } from "react-icons/md";
 import { RiGraduationCapFill } from "react-icons/ri";
 
@@ -61,3 +63,40 @@ export const experienceData: Experience[] = [
     icon: React.createElement(RiGraduationCapFill),
   },
 ];
+
+interface Project {
+  title: string;
+  description: string;
+  skills: string[];
+  image: StaticImageData;
+  remoteRepoUrl: string;
+  liveDemoUrl: string;
+}
+
+export const projectData: Project[] = [
+  {
+    title: "Issue Tracker",
+    description:
+      "This is a full-stack project where users can log in with their google accounts and keep track of issues and they can visualize the statuses of the issues through a bar graph.",
+    skills: ["NextJS", "Prisma", "Tailwind", "RadixUI", "recharts"],
+    image: IssueTracker,
+    remoteRepoUrl: "https://github.com/BokaiWang/issue-tracker",
+    liveDemoUrl: "https://issue-tracker-sigma-mauve.vercel.app",
+  },
+  {
+    title: "Game Hub",
+    description:
+      "The website allows people to search for games. It has features like filtering, sorting, pagination and switching between light/dark mode.",
+    skills: [
+      "ReactJS",
+      "Zustand",
+      "react-query",
+      "react-router",
+      "chakra-ui",
+      "Restful API",
+    ],
+    image: GameHub,
+    remoteRepoUrl: "https://github.com/BokaiWang/game-hub",
+    liveDemoUrl: "https://game-hub-one-virid.vercel.app/",
+  },
+] as const;
