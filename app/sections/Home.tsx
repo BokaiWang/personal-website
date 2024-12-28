@@ -17,7 +17,7 @@ const Home = () => {
       <article className="flex flex-col gap-3">
         <h1 className="text-6xl">Hey there,</h1>
         <p className="text-5xl">
-          {`I'm`}
+          {`I'm `}
           <TypeAnimation
             sequence={["a Web Developer", 500, "Bo-Kai Wang", 500]}
             cursor={true}
