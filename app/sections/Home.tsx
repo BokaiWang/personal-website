@@ -17,7 +17,7 @@ const Home = () => {
       <article className="flex flex-col gap-3">
         <h1 className="text-6xl">Hey there,</h1>
         <p className="text-5xl">
-          I'm{" "}
+          {`I'm`}
           <TypeAnimation
             sequence={["a Web Developer", 500, "Bo-Kai Wang", 500]}
             cursor={true}
@@ -25,9 +25,9 @@ const Home = () => {
           />
         </p>
         <p className="text-3xl leading-loose">
-          I'm a frontend developer specializing in React and fueled by a passion
+          {`I'm a frontend developer specializing in React and fueled by a passion
           for turning lines of code into captivating user experiences. I enjoy
-          building websites and web apps.
+          building websites and web apps.`}
         </p>
         <div className="flex gap-6">
           <div className="flex items-center justify-start gap-3">

@@ -23,13 +23,14 @@ const About = () => {
         website serves as a dedicated showcase for my coding projects. From{" "}
         <span className="font-bold italic dark:text-slate-300">React.js</span>{" "}
         and <span className="font-bold italic dark:text-slate-300">HTML</span>{" "}
-        to <span className="font-bold italic dark:text-slate-300">CSS</span> and
+        to <span className="font-bold italic dark:text-slate-300">CSS</span>{" "}
+        {`and
         beyond, each project reflects my commitment to craftsmanship and
         innovation. Whether you're here to explore my coding experiences or
         seeking inspiration for your own projects, I invite you to delve in and
         connect. Feel free to reach out if you're as passionate about coding as
         I am. Let's share ideas, insights, and perhaps collaborate on the next
-        big thing in the coding world!
+        big thing in the coding world!`}
       </p>
     </section>
   );

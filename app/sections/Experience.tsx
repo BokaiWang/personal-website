@@ -47,7 +47,7 @@ const Experience = () => {
               >
                 <div className="flex gap-1 flex-wrap">
                   {mainSkills?.map((skill) => (
-                    <SkillBadge>{skill}</SkillBadge>
+                    <SkillBadge key={skill}>{skill}</SkillBadge>
                   ))}
                 </div>
                 <h3 className="font-semibold capitalize">
