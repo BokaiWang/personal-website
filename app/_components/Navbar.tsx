@@ -2,8 +2,10 @@
 import classNames from "classnames";
 import Link from "next/link";
 import { useState } from "react";
-import { FaCat } from "react-icons/fa";
+import Logo from "@/public/logo.png";
 import HamburgerMenu from "./HamburgerMenu";
+import ThemeToggle from "./ThemeToggle";
+import Image from "next/image";
 
 const Navbar = () => {
   const [activeSection, setActiveSection] = useState("Intro");
@@ -17,11 +19,11 @@ const Navbar = () => {
   return (
     <div className="sticky z-10 w-screen top-0 bg-brand-900 dark:bg-stone-800">
       <nav className="flex justify-between p-3 text-lg text-brand-100">
-        <Link href={"/"}>
-          <FaCat className="text-brand-500" />
+        <Link href={"/"} className="flex justify-center items-center">
+          <Image src={Logo} alt="" width={100} />
         </Link>
         <ul className="flex gap-5 items-center">
-          {/* <ThemeToggle /> */}
+          <ThemeToggle />
           <HamburgerMenu navLinks={navLinks} />
           <div className="hidden sm:flex sm:gap-5 sm:items-center">
             {navLinks.map((link) => (

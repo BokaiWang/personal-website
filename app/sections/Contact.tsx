@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect } from "react";
 import SectionHeader from "../_components/SectionHeader";
 import { useForm, SubmitHandler } from "react-hook-form";
 import { z } from "zod";
@@ -13,16 +13,23 @@ const Contact = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors },
+    formState: { errors, isSubmitSuccessful },
+    reset,
   } = useForm<FormData>({
     resolver: zodResolver(ContactFormSchema),
   });
 
+  useEffect(() => {
+    if (isSubmitSuccessful) {
+      reset({ email: "", message: "" });
+    }
+  }, [isSubmitSuccessful, reset]);
+
   return (
-    <section id="contact" className="scroll-m-20 mx-auto w-full sm:w-3/5">
+    <section id="contact" className="scroll-m-20 mx-auto w-full sm:w-2/5">
       <SectionHeader>Contact Me</SectionHeader>
       <p className="text-2xl leading-loose mb-10">
-        Please contact me directly at{" "}
+        Feel free to contact me directly at{" "}
         <a
           className="underline hover:text-brand-700"
           href="mailto:bk.wang1989@gmail.com"
@@ -57,10 +64,17 @@ const Contact = () => {
           </p>
         </div>
         <div className="flex gap-3">
-          <button className="bg-brand-500 hover:bg-brand-600 px-4 rounded-full transition-colors text-lg ">
+          <button
+            type="submit"
+            className="bg-brand-500 hover:bg-brand-600 px-4 rounded-full transition-colors text-lg "
+          >
             Submit
           </button>
-          <button className="bg-brand-100 px-4 rounded-full text-lg border border-brand-500">
+          <button
+            type="button"
+            className="bg-brand-100 px-4 rounded-full text-lg border border-brand-500"
+            onClick={() => reset({ message: "" })}
+          >
             Clear
           </button>
         </div>

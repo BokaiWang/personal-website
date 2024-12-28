@@ -1,5 +1,6 @@
 import GameHub from "@/public/gameHub.png";
 import IssueTracker from "@/public/issueTracker.png";
+import Proshop from "@/public/proshop.png";
 import { StaticImageData } from "next/image";
 import React, { ReactNode } from "react";
 import { MdWork } from "react-icons/md";
@@ -75,6 +76,24 @@ interface Project {
 
 export const projectData: Project[] = [
   {
+    title: "Proshop",
+    description:
+      "This a full-stack project that is based on a Udemy course. It has features like pagination, searching and so on. I will be adding new features over time.",
+    skills: [
+      "ReactJS",
+      "ReduxJS",
+      "Redux-toolkit",
+      "Express.js",
+      "MongoDb",
+      "react-bootstrap",
+      "Restful API",
+      "react-hook-form",
+    ],
+    image: Proshop,
+    remoteRepoUrl: "https://github.com/BokaiWang/proshop-v2",
+    liveDemoUrl: "https://proshop-v2-9v6v.onrender.com",
+  },
+  {
     title: "Issue Tracker",
     description:
       "This is a full-stack project where users can log in with their google accounts and keep track of issues and they can visualize the statuses of the issues through a bar graph.",
@@ -86,7 +105,7 @@ export const projectData: Project[] = [
   {
     title: "Game Hub",
     description:
-      "The website allows people to search for games. It has features like filtering, sorting, pagination and switching between light/dark mode.",
+      "The project allows people to search for games. It has features like filtering, sorting, pagination and switching between light/dark mode.",
     skills: [
       "ReactJS",
       "Zustand",
