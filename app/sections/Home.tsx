@@ -63,9 +63,9 @@ const Home = () => {
             </a>
           </div>
           <div>
-            <a className="group transition-transform hover:scale-105 bg-brand-500 dark:bg-stone-800 dark:outline dark:outline-amber-600 rounded-full py-1 px-3 cursor-pointer flex items-center gap-1">
+            <a className="group transition-transform hover:scale-105 rounded-full py-1 px-3 cursor-pointer flex items-center gap-1 bg-brand-500 dark:bg-brand-800 dark:text-snow-500">
               Resume{" "}
-              <HiDownload className="opacity-60 group-hover:translate-y-1 transition-transform" />
+              <HiDownload className="opacity-70 group-hover:translate-y-1 transition-transform dark:text-snow-500" />
             </a>
           </div>
         </div>

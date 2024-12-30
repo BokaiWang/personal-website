@@ -32,6 +32,20 @@ const config: Config = {
           "200": "#FFCCA9",
           "100": "#FFE8D9",
         },
+        darkMode: {
+          "900": "#121212",
+          "800": "#1A1A1A",
+          "700": "#232323",
+          "600": "#2D2D2D",
+          "500": "#383838",
+          "400": "#444444",
+          "300": "#555555",
+          "200": "#6E6E6E",
+          "100": "#808080",
+        },
+        snow: {
+          "500": "#E0E0E0",
+        },
       },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",

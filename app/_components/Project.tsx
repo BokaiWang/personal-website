@@ -24,7 +24,7 @@ const Project: FC<Props> = ({
   liveDemoUrl,
 }) => {
   return (
-    <section className="group mb-10 flex bg-brand-200 rounded-lg gap-2 shadow-md shadow-brand-300/80 even:flex-row-reverse">
+    <section className="group mb-10 flex rounded-lg gap-2 shadow-md 0 even:flex-row-reverse bg-brand-200 shadow-brand-300/8 dark:bg-darkMode-600 dark:shadow-darkMode-900/80">
       <div className="flex-1 m-4">
         <h3 className="font-semibold text-xl">{title}</h3>
         <p>{description}</p>

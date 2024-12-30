@@ -17,8 +17,8 @@ const Navbar = () => {
     { title: "Contact", href: "/#contact" },
   ];
   return (
-    <div className="sticky z-10 w-screen top-0 bg-brand-900 dark:bg-stone-800">
-      <nav className="flex justify-between p-3 text-lg text-brand-100">
+    <div className="sticky z-10 w-screen top-0 bg-brand-900 dark:bg-darkMode-900">
+      <nav className="flex justify-between p-3 text-lg text-snow-500">
         <Link href={"/"} className="flex justify-center items-center">
           <Image src={Logo} alt="" width={100} />
         </Link>
@@ -30,13 +30,10 @@ const Navbar = () => {
               <li key={link.title}>
                 <Link
                   className={classNames({
-                    "rounded-2xl": true,
-                    "py-1": true,
-                    "px-4": true,
-                    "transition-colors": true,
-                    "focus:bg-brand-800": true,
-                    "hover:bg-brand-800": true,
-                    "bg-brand-800": activeSection === link.title,
+                    "rounded-2xl py-1 px-4 transition-colors hover:bg-brand-800 focus:bg-brand-800 dark:hover:bg-darkMode-600 dark:focus:bg-darkMode-600":
+                      true,
+                    "bg-brand-800 dark:bg-darkMode-600":
+                      activeSection === link.title,
                   })}
                   href={link.href}
                   onClick={() => setActiveSection(link.title)}

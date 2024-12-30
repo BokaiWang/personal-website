@@ -1,6 +1,6 @@
 "use client";
 
-import React, { Fragment } from "react";
+import React, { Fragment, useContext } from "react";
 import {
   VerticalTimeline,
   VerticalTimelineElement,
@@ -10,12 +10,16 @@ import parse from "html-react-parser";
 import SectionHeader from "../_components/SectionHeader";
 import { experienceData } from "../data";
 import SkillBadge from "../_components/SkillBadge";
+import { ThemeContext } from "../page";
 
 const Experience = () => {
+  const themeContext = useContext(ThemeContext);
+  const isDarkMode = themeContext?.theme === "dark";
+
   return (
     <section id="experience" className="scroll-m-20 mx-auto w-full sm:w-4/5">
       <SectionHeader>Experience</SectionHeader>
-      <VerticalTimeline lineColor="">
+      <VerticalTimeline lineColor={isDarkMode ? "#2D2D2D" : ""}>
         {experienceData.map(
           (
             {
@@ -33,15 +37,19 @@ const Experience = () => {
               <VerticalTimelineElement
                 date={duration}
                 contentStyle={{
-                  background: "#FFCCA9",
-                  boxShadow: "3px 3px 5px #FDB07B",
+                  background: isDarkMode ? "#2D2D2D" : "#FFCCA9",
+                  boxShadow: isDarkMode
+                    ? "3px 3px 5px #121212"
+                    : "3px 3px 5px #FDB07B",
                   textAlign: "left",
                   padding: "1.3rem 2rem",
                 }}
                 contentArrowStyle={{
-                  borderRight: "0.6rem solid #FFCCA9",
+                  borderRight: isDarkMode
+                    ? "0.6rem solid #2D2D2D"
+                    : "0.6rem solid #FFCCA9",
                 }}
-                iconClassName="bg-brand-100 text-brand-900"
+                iconClassName="bg-brand-100 text-brand-900 dark:bg-darkMode-800 dark:text-brand-700"
                 icon={Icon}
                 visible={true}
               >
