@@ -10,10 +10,10 @@ import parse from "html-react-parser";
 import SectionHeader from "../_components/SectionHeader";
 import { experienceData } from "../data";
 import SkillBadge from "../_components/SkillBadge";
-import { ThemeContext } from "../page";
+import useThemeContext from "../hooks/useThemeContext";
 
 const Experience = () => {
-  const themeContext = useContext(ThemeContext);
+  const themeContext = useThemeContext();
   const isDarkMode = themeContext?.theme === "dark";
 
   return (

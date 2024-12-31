@@ -2,26 +2,17 @@
 
 import Navbar from "./_components/Navbar";
 import SectionDivider from "./_components/SectionDivider";
+import ThemeProvider from "./_components/ThemeProvider";
 import About from "./sections/About";
 import Contact from "./sections/Contact";
 import Experience from "./sections/Experience";
 import Home from "./sections/Home";
 import Projects from "./sections/Projects";
-import { createContext, Dispatch, SetStateAction, useState } from "react";
-
-type TContext = {
-  theme: "dark" | "light";
-  setTheme: Dispatch<SetStateAction<"dark" | "light">>;
-};
-
-export const ThemeContext = createContext<TContext | undefined>(undefined);
 
 export default function Page() {
-  const [theme, setTheme] = useState<"dark" | "light">("light");
-
   return (
     <>
-      <ThemeContext.Provider value={{ theme, setTheme }}>
+      <ThemeProvider>
         <Navbar />
         <Home />
         <SectionDivider />
@@ -32,7 +23,7 @@ export default function Page() {
         <Projects />
         <SectionDivider />
         <Contact />
-      </ThemeContext.Provider>
+      </ThemeProvider>
     </>
   );
 }
