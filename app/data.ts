@@ -100,7 +100,7 @@ export const projectData: Project[] = [
     skills: ["NextJS", "Prisma", "Tailwind", "RadixUI", "recharts"],
     image: IssueTracker,
     remoteRepoUrl: "https://github.com/BokaiWang/issue-tracker",
-    liveDemoUrl: "https://issue-tracker-sigma-mauve.vercel.app",
+    liveDemoUrl: "https://bk-wang-issue-tracker.vercel.app/",
   },
   {
     title: "Game Hub",
@@ -116,6 +116,6 @@ export const projectData: Project[] = [
     ],
     image: GameHub,
     remoteRepoUrl: "https://github.com/BokaiWang/game-hub",
-    liveDemoUrl: "https://game-hub-one-virid.vercel.app/",
+    liveDemoUrl: "https://bk-wang-gamehub.vercel.app/",
   },
 ] as const;

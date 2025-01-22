@@ -24,7 +24,7 @@ const HamburgerMenu = ({ navLinks }: Props) => {
       <div
         className={`${
           open ? "ease-linear duration-300 -translate-x-44" : ""
-        } absolute z-10 top-3 -right-40 dark:bg-stone-700 bg-white flex items-start rounded-lg border border-white p-2`}
+        } absolute z-10 top-3 -right-40 dark:bg-stone-700 bg-brand-900 flex items-start rounded-lg border border-brand-100 p-2 text-snow-500`}
       >
         <div>
           {navLinks.map((link) => (

@@ -22,7 +22,7 @@ export default function RootLayout({
       >
         <div className="bg-brand-200 absolute -z-10 rounded-full w-48 h-48 top-20 -left-10 blur-3xl sm:w-96 sm:h-96 sm:blur-[10rem]" />
         <div className="bg-brand-200 absolute -z-10 rounded-full w-48 h-48 -bottom-10 right-10 blur-3xl sm:w-96 sm:h-96 sm:blur-[10rem]" />
-        <main>{children}</main>
+        <main className="overflow-hidden">{children}</main>
         <Footer />
       </body>
     </html>

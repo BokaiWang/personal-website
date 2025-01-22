@@ -29,7 +29,7 @@ const Home = () => {
           for turning lines of code into captivating user experiences. I enjoy
           building websites and web apps.`}
         </p>
-        <div className="flex gap-6">
+        <div className="flex gap-6 flex-wrap">
           <div className="flex items-center justify-start gap-3">
             <p className="text-xl whitespace-nowrap">Tech Stack:</p>
             <div title="React.js">
