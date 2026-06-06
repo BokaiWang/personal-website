@@ -1,6 +1,7 @@
 import GameHub from "@/public/gameHub.png";
 import IssueTracker from "@/public/issueTracker.png";
 import Proshop from "@/public/proshop.png";
+import Flashcard from "@/public/flashcard.png";
 import { StaticImageData } from "next/image";
 import React, { ReactNode } from "react";
 import { MdWork } from "react-icons/md";
@@ -75,6 +76,15 @@ interface Project {
 }
 
 export const projectData: Project[] = [
+  {
+    title: "Flashcard",
+    description:
+      "This is a flashcard-based vocabulary learning application developed using React, TypeScript, Zustand, Shadcn, and Tailwind CSS. Implemented customizable study sessions, deck management, progress tracking, and optimized state management patterns to improve performance and user experience.",
+    skills: ["ReactJS", "Zustand", "TailwindCSS", "Shadcn"],
+    image: Flashcard,
+    remoteRepoUrl: "https://github.com/BokaiWang/flashcard",
+    liveDemoUrl: "https://flashcard-kohl-ten.vercel.app/home",
+  },
   {
     title: "Proshop",
     description:
